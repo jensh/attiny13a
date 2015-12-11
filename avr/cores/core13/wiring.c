@@ -91,6 +91,10 @@ void delay(unsigned ms){
 	}//Note, I may have to reimplement this because the avr-libc delay is too slow *todo*
 }
 //For bigger delays. Based on code by "kosine" on the Arduino forum
+
+#if F_CPU == 16000000 || F_CPU == 12000000 || \
+	F_CPU == 8000000 || F_CPU == 9600000 || F_CPU == 10000000 || \
+	F_CPU == 4000000 || F_CPU == 4800000
 void uS_new(unsigned us)
 {
 uint8_t us_loops;  // define the number of outer loops based on CPU speed (defined in boards.txt)
@@ -138,6 +142,8 @@ uint8_t us_loops;  // define the number of outer loops based on CPU speed (defin
    :: "r" (us_low), "r" (us_high), "r" (us_loops) // tidy up registers
  );
 }
+#endif
+
 void delayMicroseconds(int us){
 	if(us == 0){return;}
 	#if F_CPU == 16000000 || F_CPU == 12000000
