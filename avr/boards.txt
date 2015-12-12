@@ -43,26 +43,39 @@ attiny13.build.board=attiny13f
 attiny13.bootloader.unlock_bits=0xFF
 attiny13.bootloader.lock_bits=0xFF
 
+
+# CKDIV8 unset 1(unprogrammed)
+attiny13.menu.CpuFrequency.16k=16 kHz ("Tools/Burn Bootloader" to set!)
+attiny13.menu.CpuFrequency.16k.build.f_cpu=16000L
+#0x6B will disallow ISP programming and require HVSP for reset!
+attiny13.menu.CpuFrequency.16k.bootloader.low_fuses=0x6B
+attiny13.menu.CpuFrequency.16k.bootloader.high_fuses=0xFF
+
+# CKDIV8 1(unprogrammed)
 attiny13.menu.CpuFrequency.128k=128 kHz ("Tools/Burn Bootloader" to set!)
 attiny13.menu.CpuFrequency.128k.build.f_cpu=128000L
-attiny13.menu.CpuFrequency.128k.bootloader.low_fuses=0x6B
+attiny13.menu.CpuFrequency.128k.bootloader.low_fuses=0x7B
 attiny13.menu.CpuFrequency.128k.bootloader.high_fuses=0xFF
 
+# CKDIV8 0(programmed)
 attiny13.menu.CpuFrequency.600k=600 kHz ("Tools/Burn Bootloader" to set!)
 attiny13.menu.CpuFrequency.600k.build.f_cpu=600000L
 attiny13.menu.CpuFrequency.600k.bootloader.low_fuses=0x69
 attiny13.menu.CpuFrequency.600k.bootloader.high_fuses=0xFF
 
+# CKDIV8 0(programmed) (factory default)
 attiny13.menu.CpuFrequency.1_2M=1.2 MHz ("Tools/Burn Bootloader" to set!)
 attiny13.menu.CpuFrequency.1_2M.build.f_cpu=1200000L
 attiny13.menu.CpuFrequency.1_2M.bootloader.low_fuses=0x6a
 attiny13.menu.CpuFrequency.1_2M.bootloader.high_fuses=0xFF
 
+# CKDIV8 1(unprogrammed)
 attiny13.menu.CpuFrequency.4_8M=4.8 MHz ("Tools/Burn Bootloader" to set!)
 attiny13.menu.CpuFrequency.4_8M.build.f_cpu=4800000L
 attiny13.menu.CpuFrequency.4_8M.bootloader.low_fuses=0x79
 attiny13.menu.CpuFrequency.4_8M.bootloader.high_fuses=0xFF
 
+# CKDIV8 1(unprogrammed)
 attiny13.menu.CpuFrequency.9_6M=9.6 MHz ("Tools/Burn Bootloader" to set!)
 attiny13.menu.CpuFrequency.9_6M.build.f_cpu=9600000L
 attiny13.menu.CpuFrequency.9_6M.bootloader.low_fuses=0x7A
