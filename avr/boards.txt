@@ -36,9 +36,9 @@ attiny13.bootloader.tool=arduino:avrdude
 #attiny13.bootloader.extended_fuses=
 #attiny13.bootloader.file=empty
 
-attiny13.build.mcu=attiny13
+attiny13.build.mcu=attiny13a
 attiny13.build.core=core13
-attiny13.build.board=attiny13f
+attiny13.build.board=attiny13a
 
 attiny13.bootloader.unlock_bits=0xFF
 attiny13.bootloader.lock_bits=0xFF
