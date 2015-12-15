@@ -2,8 +2,8 @@
 menu.CpuFrequency=CPU Frequency
 
 attiny13.name=Attiny 13
+attiny13.bootloader.protocol=usbasp
 attiny13.bootloader.tool=avrdude13a
-# attiny13.upload.tool=avrdude13a
 attiny13.upload.tool=avrdude13a
 attiny13.upload.protocol=usbasp
 attiny13.upload.maximum_size=1024
@@ -13,9 +13,6 @@ attiny13.bootloader.low_fuses=0x69
 attiny13.bootloader.high_fuses=0xFF
 attiny13.bootloader.unlock_bits=0xFF
 attiny13.bootloader.lock_bits=0xFF
-attiny13.bootloader.tool=arduino:avrdude
-#attiny13.bootloader.extended_fuses=
-#attiny13.bootloader.file=empty
 
 attiny13.build.mcu=attiny13a
 attiny13.build.core=core13

@@ -1,0 +1,6 @@
+usbasp13a.name=USBasp for ATTiny13a. Burn Bootloader to set fuses.
+usbasp13a.communication=usb
+usbasp13a.protocol=usbasp
+usbasp13a.program.protocol=usbasp
+usbasp13a.program.tool=avrdude13a
+usbasp13a.program.extra_params=-Pusb
