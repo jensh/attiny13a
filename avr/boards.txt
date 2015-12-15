@@ -1,30 +1,11 @@
-##############################
-#attiny13.name=Attiny13 @ 128 KHz (internal watchdog oscillator)
- 
-#attiny13.upload.using=arduino:arduinoisp
-# attiny13.upload.protocol=avrispv2
-# attiny2313at1.upload.using=pololu
- 
-#attiny13.upload.maximum_size=1024
-#attiny13.upload.speed=250 # important for not losing connection to a slow processor
- 
-#attiny13.bootloader.low_fuses=0x7B
-#attiny13.bootloader.high_fuses=0xFF
- 
-#attiny13.bootloader.unlock_bits=0x3F
-#attiny13.bootloader.lock_bits=0x3F
- 
-#attiny13.build.mcu=attiny13
-#attiny13.build.f_cpu=128000
-#attiny13.build.core=core13
-########################
 
 menu.CpuFrequency=CPU Frequency
 
-
 attiny13.name=Attiny 13
-# attiny13.upload.using=arduino:arduinoisp
-attiny13.upload.tool=avrdudex
+attiny13.bootloader.tool=avrdude13a
+# attiny13.upload.tool=avrdude13a
+attiny13.upload.tool=avrdude13a
+attiny13.upload.protocol=usbasp
 attiny13.upload.maximum_size=1024
 attiny13.maximum_data_size=64
 
