@@ -25,6 +25,7 @@ extern "C"{
 #define LOW 0
 #define INPUT 0
 #define OUTPUT 1
+#define INPUT_PULLUP 0x2
 #define false 0
 #define FALSE 0
 #define TRUE 1

@@ -17,11 +17,16 @@ Version 0.22
 #include "wiring_private.h"
 
 void pinMode(uint8_t pin, uint8_t mode){
-	if(pin > 5 || pin < 0){return;}
-	if(!mode){
+	if(pin > 5){return;}
+	if(mode != OUTPUT){
 		DDRB &= ~_BV(pin);
+		if (mode == INPUT_PULLUP) {
+			PORTB |= _BV(pin);
+		} else {
+			PORTB &= ~_BV(pin);
+		}
 	} else {
-        DDRB |= _BV(pin);
+		DDRB |= _BV(pin);
 	}
 }
 void turnOffPWM(uint8_t timer){
@@ -33,7 +38,7 @@ void turnOffPWM(uint8_t timer){
 	}
 }
 void digitalWrite(uint8_t pin, uint8_t val){
-	if(pin > 5 || pin < 0){return;}
+	if(pin > 5){return;}
 	if(pin<2){turnOffPWM(pin);} //If its a PWM pin, make sure the PWM is off
 	if(!val){
 		PORTB &= ~_BV(pin);
@@ -42,7 +47,7 @@ void digitalWrite(uint8_t pin, uint8_t val){
 	}
 }
 uint8_t digitalRead(uint8_t pin){
-	if(pin > 5 || pin < 0){return 0;}
+	if(pin > 5){return 0;}
 	if(pin < 2) turnOffPWM(pin); //If its PWM pin, makes sure the PWM is off
 	return !!(PINB & _BV(pin));
 }
