@@ -2,8 +2,8 @@
 # For more info:
 # https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification
 
-name=ATTiny13
-version=0.40
+name=ATtiny13A
+version=0.30
 
 # AVR compile variables
 # --------------------- 

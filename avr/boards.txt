@@ -1,7 +1,7 @@
 
 menu.CpuFrequency=CPU Frequency
 
-attiny13.name=Attiny 13
+attiny13.name=ATtiny13A
 attiny13.bootloader.protocol=usbasp
 attiny13.bootloader.tool=avrdude13a
 attiny13.upload.tool=avrdude13a
