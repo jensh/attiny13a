@@ -24,7 +24,7 @@ void analogReference(uint8_t mode){
 }
 int analogRead(uint8_t pin){
 	uint8_t l,h;
-	ADMUX = (ADMUX & _BV(REFS0)) | pin & 3; //Setup ADC, preserve REFS0
+	ADMUX = (ADMUX & _BV(REFS0)) | (pin & 3); //Setup ADC, preserve REFS0
 	ADCSRA |= _BV(ADSC);	
 	while(ADCSRA & (1<<ADSC)); //Wait for conversion
 	l = ADCL;  //Read and return 10 bit result
