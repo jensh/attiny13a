@@ -81,6 +81,7 @@ void analogWrite(uint8_t, uint8_t);
 unsigned long millis(void);
 unsigned long micros(void);
 void delay(unsigned ms);
+void delay_precise(unsigned ms); // Higher precision, but ~100 additional code-bytes.
 void delayMicroseconds(int us);
 void shiftOut(uint8_t, uint8_t, uint8_t, uint8_t);
 uint8_t shiftIn(uint8_t, uint8_t, uint8_t);

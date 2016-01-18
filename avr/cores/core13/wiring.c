@@ -90,6 +90,46 @@ void delay(unsigned ms){
 		_delay_ms(1); //Using the libc routine over and over is non-optimal but it works and is close enough
 	}//Note, I may have to reimplement this because the avr-libc delay is too slow *todo*
 }
+
+// Working alternative with higher precision, but ~100 more code-bytes.
+void delay_precise(unsigned ms) {
+	unsigned long end;
+	uint8_t go;
+	// Scale ms to ovrf
+#if F_CPU < 150000 && F_CPU > 80000
+	end = ms / 2;
+#elif F_CPU == 600000
+	end = ms * 2;
+#elif F_CPU == 1000000
+	end = ms * 4;
+#elif F_CPU == 1200000
+	end = ms * 5;
+#elif F_CPU == 4000000
+	end = ms * 16;
+#elif F_CPU == 4800000
+	end = ms * 19;
+#elif F_CPU == 8000000
+	end = ms * 31;
+#elif F_CPU == 9600000
+	end = ms * 37;
+#elif F_CPU == 10000000
+	end = ms * 39;
+#elif F_CPU == 12000000
+	end = ms * 47;
+#elif F_CPU == 16000000
+	end = ms * 63;
+#else
+#error This CPU frequency is not defined
+#endif
+	asm("cli");
+	end += ovrf;
+	asm("sei");
+	do {
+		asm("cli");
+		go = ((long)(end - ovrf)) > 0;
+		asm("sei");
+	} while (go);
+}
 //For bigger delays. Based on code by "kosine" on the Arduino forum
 
 #if F_CPU == 16000000 || F_CPU == 12000000 || \
