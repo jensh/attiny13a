@@ -3,6 +3,10 @@ Core13a
 
 This is a fork of Core13. An Arduino core for Attiny13.
 
+It requires Arduino IDE version 1.6.9 or above. For older versions of
+the arduino IDE, you can try the branch
+[arduino-1.6.6](https://github.com/jensh/attiny13a/tree/arduino-1.6.6).
+
 http://sourceforge.net/projects/ard-core13/
 
 The initial commit comes from core13_022_arduino_1_6.zip
@@ -29,7 +33,7 @@ installation and clone this repository into it:
 
 e.g.
 ```
-cd /opt/arduino/arduino-1.6.6/hardware
+cd /opt/arduino/arduino-1.6.9/hardware
 git clone https://github.com/jensh/attiny13a.git
 ```
 
